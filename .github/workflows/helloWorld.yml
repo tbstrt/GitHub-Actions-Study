@@ -1,0 +1,16 @@
+name: Hello World
+
+on:
+  push:
+    branches: 
+      - master
+  workflow_dispatch:
+
+jobs:
+  print-hello-world:
+    runs-on: macos-latest
+    steps:
+      - name: execute echo "Hello World!"
+        run: echo "Hello World!"
+      - name: execute echo "Hello GitHub Actions!"
+        run: echo "Hello GitHub Actions!"
