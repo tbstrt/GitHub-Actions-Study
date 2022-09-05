@@ -23,8 +23,8 @@ jobs:
           -resultBundlePath TestResults 
           clean test -quiet
 
-      # テスト結果のアップロード
-      - uses: actions/upload-artifact@v2
+      # テスト結果を表示
+      - uses: kishikawakatsumi/xcresulttool@v1
         with:
-          name: test-results
-          path: testReports
+          path: TestResults.xcresult
+        if: success() || failure()
