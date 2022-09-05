@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test_on PR:
+  test_on_PR:
     runs-on: macos-latest
     steps:
       # チェックアウト
