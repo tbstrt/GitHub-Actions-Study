@@ -16,4 +16,9 @@ jobs:
       - uses: actions/checkout@v2
       
       - name: execute UT Only
-        run: arch -x86_64 xcrun xcodebuild -project SampleApp.xcodeproj/ -scheme SampleApp -destination "platform=iOS Simulator,name=iPhone 13,OS=latest" -skip-testing:SampleAppUITests -resultBundlePath TestResults clean test -quiet
+        run: arch -x86_64 xcrun xcodebuild -project SampleApp/SampleApp.xcodeproj/
+          -scheme SampleApp
+          -destination "platform=iOS Simulator,name=iPhone 13,OS=latest"
+          -skip-testing:SampleAppUITests
+          -resultBundlePath TestResults 
+          clean test -quiet
