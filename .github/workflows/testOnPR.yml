@@ -1,0 +1,19 @@
+name: Xcode UT on PR 
+
+on:
+  pull_request:
+    types:
+      - opened
+    branches: 
+      - main
+  workflow_dispatch:
+
+jobs:
+  test_on PR:
+    runs-on: macos-latest
+    steps:
+      # チェックアウト
+      - uses: actions/checkout@v2
+      
+      - name: execute UT Only
+        run: arch -x86_64 xcrun xcodebuild -project SampleApp.xcodeproj/ -scheme SampleApp -destination "platform=iOS Simulator,name=iPhone 13,OS=latest" -skip-testing:SampleAppUITests -resultBundlePath TestResults clean test -quiet
