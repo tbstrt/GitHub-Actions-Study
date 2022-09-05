@@ -22,3 +22,9 @@ jobs:
           -skip-testing:SampleAppUITests
           -resultBundlePath TestResults 
           clean test -quiet
+
+      # テスト結果のアップロード
+      - uses: actions/upload-artifact@v2
+        with:
+          name: test-results
+          path: testReports
