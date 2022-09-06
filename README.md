@@ -70,16 +70,19 @@ jobs:
           clean test -quiet
 
       # テスト結果を表示
-      - uses: kishikawakatsumi/xcresulttool@v1
+      - uses: kishikawakatsumi/xcresulttool@v1 # Xcode Result Bundleとを解析し、Markdown形式でGitHub Checks APIにPOSTして表示可能にしてくれる
         with:
           path: TestResults.xcresult
         if: success() || failure()
 ```
+* pull reqをトリガーにWorkflowが実行される。
+![](Resources/image220906_124327.png)
+![](Resources/image220906_124352.png)
+* 完了すると、テスト結果やCode coverageを確認できる。
+![](Resources/image220906_124841.png)
 
-![](Resources/image220906_100715.png)
-
-![](Resources/image220906_100821.png)
-
-## リファレンス
-* [GitHub Marketplace actions](https://github.com/marketplace?type=actions)
+## References
+* [GitHub Actions ワークフロー構文](https://docs.github.com/ja/actions/using-workflows/workflow-syntax-for-github-actions)
+* [【GitHub Actions】ワークフローはなんとなく書けるけど構造や仕組みの理解が曖昧な方々向けの記事](https://qiita.com/suzuki0430/items/951ed9753c04743537cc)
+* [GitHub 謹製 actions](https://github.com/actions)
 * [GitHub Marketplace actions](https://github.com/marketplace?type=actions)
