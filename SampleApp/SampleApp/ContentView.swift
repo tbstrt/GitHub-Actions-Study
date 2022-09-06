@@ -14,10 +14,10 @@ struct ContentView: View {
         let myGoodbyeLabel = LabelContent(greet: .goodbye)
         VStack {
             Label(myHellLabel.title, systemImage: myHellLabel.systemImage)
-                .font(.largeTitle)
+                .font(.title)
                 .padding()
             Label(myGoodbyeLabel.title, systemImage: myGoodbyeLabel.systemImage)
-                .font(.largeTitle)
+                .font(.callout)
         }
     }
 }
