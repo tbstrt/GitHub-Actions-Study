@@ -1,4 +1,6 @@
 # GitHub-Actions-Study
+[![Xcode UT on PR](https://github.com/tbstrt/GitHub-Actions-Study/actions/workflows/testOnPR.yml/badge.svg)](https://github.com/tbstrt/GitHub-Actions-Study/actions/workflows/testOnPR.yml)
+
 ## 概要
 * GitHub上のリポジトリやイシューに対するさまざまな操作(Push, Pull Request, 外部イベントなど)や指定したスケジュールをトリガとして、あらかじめ定義した処理(Workflow)を実行する機能。
 
