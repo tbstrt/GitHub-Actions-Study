@@ -13,8 +13,9 @@ jobs:
     runs-on: macos-latest
     steps:
       # チェックアウト
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2 # Githubやサードパーティの公開アクションを利用
       
+      # UTを実行
       - name: execute UT
         run: arch -x86_64 xcrun xcodebuild -project SampleApp/SampleApp.xcodeproj/
           -scheme SampleApp
@@ -24,7 +25,7 @@ jobs:
           clean test -quiet
 
       # テスト結果を表示
-      - uses: kishikawakatsumi/xcresulttool@v1
+      - uses: kishikawakatsumi/xcresulttool@v1 # Xcode Result Bundleとを解析し、Markdown形式でGitHub Checks APIにPOSTして表示可能にしてくれる
         with:
           path: TestResults.xcresult
         if: success() || failure()
