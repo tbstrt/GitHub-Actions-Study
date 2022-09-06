@@ -19,21 +19,24 @@ class LabelContentTests: XCTestCase {
     }
 
     func testHello() throws {
+        let myHelloLabel = LabelContent(greet: .hello)
+        XCTAssertEqual(myHelloLabel.title, "Hello World!")
+        XCTAssertEqual(myHelloLabel.systemImage, "sun.max")
+    }
+
+    func testGoodbye() throws {
+        let myGoodbyeLabel = LabelContent(greet: .goodbye)
+        XCTAssertEqual(myGoodbyeLabel.title, "Goodbye World!")
+        XCTAssertEqual(myGoodbyeLabel.systemImage, "moon")
+    }
+
+    func testChangeTitle() throws {
         var myHelloLabel = LabelContent(greet: .hello)
         XCTAssertEqual(myHelloLabel.title, "Hello World!")
         XCTAssertEqual(myHelloLabel.systemImage, "sun.max")
 
         myHelloLabel.title = "Hello World!!!!!"
         XCTAssertEqual(myHelloLabel.title, "Hello World!!!!!")
-    }
-
-    func testGoodbye() throws {
-        var myGoodbyeLabel = LabelContent(greet: .goodbye)
-        XCTAssertEqual(myGoodbyeLabel.title, "Goodbye World!")
-        XCTAssertEqual(myGoodbyeLabel.systemImage, "moon")
-
-        myGoodbyeLabel.title = "Goodbye World!!!!!"
-        XCTAssertEqual(myGoodbyeLabel.title, "Goodbye World!!!!!")
     }
 
 }

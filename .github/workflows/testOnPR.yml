@@ -13,8 +13,9 @@ jobs:
     runs-on: macos-latest
     steps:
       # チェックアウト
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2 # Githubやサードパーティの公開アクションを利用
       
+      # UTを実行
       - name: execute UT
         run: arch -x86_64 xcrun xcodebuild -project SampleApp/SampleApp.xcodeproj/
           -scheme SampleApp
